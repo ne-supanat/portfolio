@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(fontSize: 16),
         ),
       ),
-      home: MainView(),
+      home: SelectableRegion(selectionControls: materialTextSelectionControls, child: MainView()),
     );
   }
 }
