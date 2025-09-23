@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/features/theme_bloc.dart';
 import 'package:portfolio/widgets/side_project_section.dart';
 import '../widgets/box.dart';
 import '../widgets/contact_section.dart';
@@ -12,16 +14,27 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFCFF),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Row(
-            spacing: 24,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [overview(context), detail(context)],
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Row(
+                spacing: 24,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [overview(context), detail(context)],
+              ),
+            ),
           ),
-        ),
+          Positioned(
+            top: 4,
+            right: 16,
+            child: IconButton(
+              onPressed: () => context.read<ThemeCubit>().toggleModel(),
+              icon: context.read<ThemeCubit>().getIcon(),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -38,9 +51,8 @@ class MainView extends StatelessWidget {
                 Center(
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(width: 6),
+                      border: Border.all(width: 3, color: Theme.of(context).primaryColor),
                       shape: BoxShape.circle,
-                      color: Color(0xff313445),
                     ),
                     child: CircleAvatar(maxRadius: 62),
                   ),
@@ -48,7 +60,7 @@ class MainView extends StatelessWidget {
                 SizedBox(height: 16),
                 Text(
                   "Supanat Charoenwong (Ne)".toUpperCase(),
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 8),

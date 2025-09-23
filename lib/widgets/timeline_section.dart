@@ -141,7 +141,7 @@ class TimelineSection extends StatelessWidget {
       spacing: 4,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(item.time.toUpperCase(), style: Theme.of(context).textTheme.bodyMedium),
+        Text(item.time.toUpperCase(), style: Theme.of(context).textTheme.labelMedium),
         AppBox(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
