@@ -17,7 +17,7 @@ ThemeData lightMode = ThemeData(
 ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
   scaffoldBackgroundColor: primaryColor,
-  primaryColor: primaryColor,
+  primaryColor: Color(0xffFAFCFF),
   iconTheme: IconThemeData(color: primaryColor),
   textTheme: TextTheme(
     titleLarge: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),

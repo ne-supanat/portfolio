@@ -7,19 +7,23 @@ class ThemeCubit extends Cubit<ThemeData> {
 
   void toggleModel() {
     getCurrentStat();
-    state == lightMode ? emit(darkMode) : emit(lightMode);
+    isLightMode() ? emit(darkMode) : emit(lightMode);
     getCurrentStat();
   }
 
   Icon getIcon() {
-    if (state == lightMode) {
+    if (isLightMode()) {
       return Icon(Icons.sunny, color: Colors.black);
     } else {
       return Icon(Icons.brightness_2, color: Colors.white);
     }
   }
 
+  bool isLightMode() {
+    return state == lightMode;
+  }
+
   void getCurrentStat() {
-    print(state == lightMode ? "on light mode" : "on dark mode");
+    print(isLightMode() ? "on light mode" : "on dark mode");
   }
 }
