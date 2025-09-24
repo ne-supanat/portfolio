@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/features/theme_bloc.dart';
-import 'package:portfolio/theme/theme.dart';
 
-import '../../widgets/side_project_section.dart';
-import '../../widgets/theme_button.dart';
-import '../../widgets/timeline_section.dart';
+import '../../theme/theme.dart';
+import '../theme_bloc.dart';
+import 'award_view.dart';
+import 'education_view.dart';
 import 'profile_view.dart';
+import 'side_projects_view.dart';
+import 'work_view.dart';
 
 class MobileLayout extends StatefulWidget {
   const MobileLayout({super.key});
@@ -30,21 +31,13 @@ class _MobileLayoutState extends State<MobileLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            padding: EdgeInsets.all(24),
-            child: [
-              ProfileView(),
-              TimelineSection.work(),
-              TimelineSection.education(),
-              TimelineSection.award(),
-              SideProjectSection(),
-            ].elementAt(_selectedIndex),
-          ),
-          Positioned(top: 16, right: 16, child: ThemeButton()),
-        ],
-      ),
+      body: [
+        ProfileView(),
+        WorkView(),
+        EducationView(),
+        AwardView(),
+        SideProjectsView(),
+      ].elementAt(_selectedIndex),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           textTheme: Theme.of(

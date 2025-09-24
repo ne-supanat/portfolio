@@ -39,6 +39,7 @@ class SideProjectSection extends StatelessWidget {
         title: "Life Portfolio",
         description: "",
         github: "https://github.com/ne-supanat/life_portfolio",
+        url: "https://ne-supanat.github.io/life_portfolio/",
         tags: ["Flutter", "Life"],
       ),
       ProjectModel(
@@ -99,6 +100,8 @@ class SideProjectSection extends StatelessWidget {
         tags: ["Flutter", "Hackaton", "Game"],
       ),
     ];
+
+    items.sort((a, b) => b.highlight ? 1 : -1); // hightlighted items first
 
     return Column(
       spacing: 8,

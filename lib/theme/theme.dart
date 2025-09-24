@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const primaryColor = Color(0xff41465E);
 
@@ -12,6 +13,7 @@ ThemeData lightMode = ThemeData(
     bodyMedium: TextStyle(color: primaryColor, fontSize: 16),
     labelMedium: TextStyle(color: primaryColor, fontSize: 16),
   ),
+  fontFamily: GoogleFonts.notoSans().fontFamily,
 );
 
 ThemeData darkMode = ThemeData(
@@ -24,4 +26,5 @@ ThemeData darkMode = ThemeData(
     bodyMedium: TextStyle(color: primaryColor, fontSize: 16),
     labelMedium: TextStyle(color: Colors.white, fontSize: 16),
   ),
+  fontFamily: GoogleFonts.notoSans().fontFamily,
 );

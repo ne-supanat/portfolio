@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/timeline_model.dart';
-import 'package:portfolio/widgets/box.dart';
 import 'package:super_bullet_list/bullet_list.dart';
+
+import '../models/timeline_model.dart';
+import 'box.dart';
 
 class TimelineSection extends StatelessWidget {
   const TimelineSection({super.key, required this.title, required this.items});
@@ -105,8 +106,7 @@ class TimelineSection extends StatelessWidget {
       TimelineModel(
         time: "JAN 2018, JAN 2017",
         title: "Global Game Jam",
-        subtitle2: "Role: Programmer",
-        detialList: [],
+        detialList: ["Role: Programmer"],
       ),
       TimelineModel(
         time: "MAR 2017",

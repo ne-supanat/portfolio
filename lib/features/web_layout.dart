@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/avartar.dart';
 
 import '../widgets/box.dart';
 import '../widgets/contact_section.dart';
@@ -14,10 +15,10 @@ class WebLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Padding(
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Padding(
               padding: const EdgeInsets.all(24),
               child: Row(
                 spacing: 24,
@@ -25,9 +26,9 @@ class WebLayout extends StatelessWidget {
                 children: [overview(context), detail(context)],
               ),
             ),
-          ),
-          Positioned(top: 4, right: 16, child: ThemeButton()),
-        ],
+            Positioned(top: 4, right: 16, child: ThemeButton()),
+          ],
+        ),
       ),
     );
   }
@@ -41,15 +42,7 @@ class WebLayout extends StatelessWidget {
           AppBox(
             child: Column(
               children: [
-                Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 3, color: Theme.of(context).primaryColor),
-                      shape: BoxShape.circle,
-                    ),
-                    child: CircleAvatar(maxRadius: 62),
-                  ),
-                ),
+                Center(child: Avartar()),
                 SizedBox(height: 16),
                 Text(
                   "Supanat Charoenwong (Ne)".toUpperCase(),
