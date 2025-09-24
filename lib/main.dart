@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
 
   void precacheImages(BuildContext context) {
     final images = [
+      AssetImage('assets/images/image_logo.png'),
       AssetImage('assets/icons/icon_github.png'),
       AssetImage('assets/icons/icon_profile.png'),
       AssetImage('assets/icons/icon_profile_active.png'),

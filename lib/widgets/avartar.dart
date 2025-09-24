@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../constants/emoticons.dart';
-import '../features/theme_bloc.dart';
-
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
+import '../constants/emoticons.dart';
 import '../theme/theme.dart';
 
 class Avartar extends StatefulWidget {
@@ -24,7 +22,7 @@ class _AvartarState extends State<Avartar> {
   }
 
   void randomNewEmoticon() {
-    _selectedEmoticonIndex = Random().nextInt(emoticons.length);
+    _selectedEmoticonIndex = Random().nextInt((emoticons.length * 1.2).floor());
   }
 
   @override
@@ -38,12 +36,7 @@ class _AvartarState extends State<Avartar> {
       },
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            width: 3,
-            color: context.read<ThemeCubit>().isLightMode()
-                ? primaryColor
-                : Colors.blueGrey.shade100,
-          ),
+          border: Border.all(width: 3, color: primaryColor),
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
@@ -51,10 +44,16 @@ class _AvartarState extends State<Avartar> {
           backgroundColor: Color(0xffFAFCFF),
           child: FittedBox(
             fit: BoxFit.contain,
-            child: Text(
-              emoticons.elementAt(_selectedEmoticonIndex),
-              style: TextStyle(fontSize: 62, fontWeight: FontWeight.bold, color: primaryColor),
-            ),
+            child: _selectedEmoticonIndex < emoticons.length
+                ? Text(
+                    emoticons.elementAt(_selectedEmoticonIndex),
+                    style: TextStyle(
+                      fontSize: 62,
+                      fontWeight: FontWeight.bold,
+                      color: primaryColor,
+                    ),
+                  )
+                : Image.asset('assets/images/image_logo.png', scale: 2),
           ),
         ),
       ),
