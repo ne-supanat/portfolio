@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/project_model.dart';
-import 'package:portfolio/widgets/box.dart';
-import 'package:portfolio/widgets/tag.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../models/project_model.dart';
+import '../theme/theme.dart';
+import 'box.dart';
+import 'tag.dart';
 
 class SideProjectSection extends StatelessWidget {
   const SideProjectSection({super.key});
@@ -106,12 +108,14 @@ class SideProjectSection extends StatelessWidget {
         title: "Iridescent Slide Puzzle",
         description: "A small slide puzzle game implemented in Flutter",
         github: "https://github.com/ne-supanat/puzzle_slide_gradient",
+        url: "https://ne-supanat.github.io/puzzle_slide_gradient/",
         vdo: "https://youtu.be/CNyeJMS6JbQ",
         tags: ["Flutter", "Hackaton", "Game"],
+        highlight: true,
       ),
     ];
 
-    items.sort((a, b) => b.highlight ? 1 : -1); // hightlighted items first
+    items.sort((a, b) => a.highlight ? -1 : 1); // hightlighted items first
 
     return Column(
       spacing: 8,
@@ -134,11 +138,16 @@ class SideProjectSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: Text(
-                  item.title,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      item.title,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    if (item.highlight) Icon(Icons.star_border_rounded, color: primaryColor),
+                  ],
                 ),
               ),
               SizedBox(width: 8),

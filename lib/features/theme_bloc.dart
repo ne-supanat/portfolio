@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/theme/theme.dart';
@@ -24,6 +26,6 @@ class ThemeCubit extends Cubit<ThemeData> {
   }
 
   void getCurrentStat() {
-    print(isLightMode() ? "on light mode" : "on dark mode");
+    log(isLightMode() ? "on light mode" : "on dark mode");
   }
 }
