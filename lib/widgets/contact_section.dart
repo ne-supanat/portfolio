@@ -35,7 +35,7 @@ class ContactContent extends StatelessWidget {
     final git = "ne-supanat";
     return contactItem(
       context,
-      icon: ImageIcon(AssetImage('icons/icon_github.png')),
+      icon: ImageIcon(AssetImage('assets/icons/icon_github.png')),
       text: git,
       url: "https://github.com/$git",
     );
