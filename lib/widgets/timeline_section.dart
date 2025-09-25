@@ -106,7 +106,8 @@ class TimelineSection extends StatelessWidget {
       TimelineModel(
         time: "JAN 2018, JAN 2017",
         title: "Global Game Jam",
-        detialList: ["Role: Programmer"],
+        subtitle2: "Role: Programmer",
+        detialList: ["Participation certifications"],
       ),
       TimelineModel(
         time: "MAR 2017",
