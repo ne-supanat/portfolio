@@ -68253,7 +68253,7 @@ K(a){var s=null,r=A.Rs(8)
 return A.oF(s,this.c,B.w,s,new A.e6(B.j,s,A.afn(A.aF(4286432255),1),r,s,s,B.b7),s,s,s,new A.be(16,16,16,16),s,s,s)}}
 A.tH.prototype={
 K(a){var s=this,r=null
-return A.oF(r,A.eV(A.c([s.th(a,A.mk(B.AD,r,r,r),"naesup@gmail.com","mailto:naesup@gmail.com"),s.th(a,A.mk(B.AF,r,r,r),"+66936704299","tel:+66936704299"),s.th(a,A.ajT(new A.bX("icons/icon_github.png",r,r)),"ne-supanat","https://github.com/ne-supanat"),s.th(a,A.mk(B.AE,r,r,r),"Resume","https://drive.google.com/file/d/1GOcItr2xKtvtbJgaxsyZLBOVQ5bYCHiS/view?usp=sharing")],t.p),B.a6,B.L,B.W,4),B.w,new A.ae(100,1/0,0,1/0),r,r,r,r,r,r,r,r)},
+return A.oF(r,A.eV(A.c([s.th(a,A.mk(B.AD,r,r,r),"naesup@gmail.com","mailto:naesup@gmail.com"),s.th(a,A.mk(B.AF,r,r,r),"+66936704299","tel:+66936704299"),s.th(a,A.ajT(new A.bX("assets/icons/icon_github.png",r,r)),"ne-supanat","https://github.com/ne-supanat"),s.th(a,A.mk(B.AE,r,r,r),"Resume","https://drive.google.com/file/d/1GOcItr2xKtvtbJgaxsyZLBOVQ5bYCHiS/view?usp=sharing")],t.p),B.a6,B.L,B.W,4),B.w,new A.ae(100,1/0,0,1/0),r,r,r,r,r,r,r,r)},
 th(a,b,c,d){var s=null,r=A.a3(a).ok.z
 return A.n8(A.c([b,A.EE(!1,!0,A.d0(c,r==null?s:r.a4h(B.vL),s),s,!0,s,s,s,s,s,s,new A.Sz(d),s,s,s)],t.p),B.az,B.L,B.dm,8)}}
 A.Sz.prototype={
