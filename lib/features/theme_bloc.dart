@@ -2,14 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/theme/theme.dart';
 
-class ThemeCubit extends Cubit<ThemeData> {
-  ThemeCubit() : super(lightMode);
+class ThemeCubit extends Cubit<ThemeMode> {
+  ThemeCubit() : super(ThemeMode.light);
 
   void toggleModel() {
     getCurrentStat();
-    isLightMode() ? emit(darkMode) : emit(lightMode);
+    isLightMode() ? emit(ThemeMode.dark) : emit(ThemeMode.light);
     getCurrentStat();
   }
 
@@ -22,7 +21,7 @@ class ThemeCubit extends Cubit<ThemeData> {
   }
 
   bool isLightMode() {
-    return state == lightMode;
+    return state == ThemeMode.light;
   }
 
   void getCurrentStat() {

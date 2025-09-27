@@ -9,6 +9,9 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayWebLayout = MediaQuery.sizeOf(context).width > 950;
-    return SafeArea(child: displayWebLayout ? WebLayout() : MobileLayout());
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: SafeArea(child: displayWebLayout ? WebLayout() : MobileLayout()),
+    );
   }
 }

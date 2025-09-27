@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/theme/theme.dart';
 import 'features/main_view.dart';
 import 'features/theme_bloc.dart';
 
@@ -7,7 +8,7 @@ void main() {
   runApp(
     BlocProvider(
       create: (_) => ThemeCubit(),
-      child: BlocBuilder<ThemeCubit, ThemeData>(builder: (context, state) => const MyApp()),
+      child: BlocBuilder<ThemeCubit, ThemeMode>(builder: (context, state) => const MyApp()),
     ),
   );
 }
@@ -19,10 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     precacheImages(context);
 
-    return BlocBuilder<ThemeCubit, ThemeData>(
+    return BlocBuilder<ThemeCubit, ThemeMode>(
       builder: (context, state) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: state,
+        themeMode: state,
+        theme: lightMode,
+        darkTheme: darkMode,
         title: "Ne-Supanat",
         home: SelectableRegion(selectionControls: materialTextSelectionControls, child: MainView()),
       ),

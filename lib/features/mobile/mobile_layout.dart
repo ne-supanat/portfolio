@@ -44,42 +44,50 @@ class _MobileLayoutState extends State<MobileLayout> {
             context,
           ).textTheme.copyWith(labelMedium: TextStyle(color: Colors.yellow)),
         ),
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          selectedItemColor: getBottomNavColor(),
-          selectedIconTheme: Theme.of(context).iconTheme.copyWith(color: getBottomNavColor()),
-          unselectedIconTheme: Theme.of(context).iconTheme.copyWith(color: getBottomNavColor()),
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/icon_profile.png')),
-              activeIcon: ImageIcon(AssetImage('assets/icons/icon_profile_active.png')),
-              label: 'Profile',
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(color: Theme.of(context).primaryColor.withAlpha((0.1 * 255).toInt())),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/icon_work.png')),
-              activeIcon: ImageIcon(AssetImage('assets/icons/icon_work_active.png')),
-              label: 'Work',
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/icon_education.png')),
-              activeIcon: ImageIcon(AssetImage('assets/icons/icon_education_active.png')),
-              label: 'Education',
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/icon_award.png')),
-              activeIcon: ImageIcon(AssetImage('assets/icons/icon_award_active.png')),
-              label: 'Award',
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/icon_project.png')),
-              activeIcon: ImageIcon(AssetImage('assets/icons/icon_project_active.png')),
-              label: 'Projects',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
+          ),
+          child: BottomNavigationBar(
+            elevation: 0,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            selectedItemColor: getBottomNavColor(),
+            selectedIconTheme: Theme.of(context).iconTheme.copyWith(color: getBottomNavColor()),
+            unselectedIconTheme: Theme.of(context).iconTheme.copyWith(color: getBottomNavColor()),
+            selectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/icons/icon_profile.png')),
+                activeIcon: ImageIcon(AssetImage('assets/icons/icon_profile_active.png')),
+                label: 'Profile',
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/icons/icon_work.png')),
+                activeIcon: ImageIcon(AssetImage('assets/icons/icon_work_active.png')),
+                label: 'Work',
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/icons/icon_education.png')),
+                activeIcon: ImageIcon(AssetImage('assets/icons/icon_education_active.png')),
+                label: 'Education',
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/icons/icon_award.png')),
+                activeIcon: ImageIcon(AssetImage('assets/icons/icon_award_active.png')),
+                label: 'Award',
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/icons/icon_project.png')),
+                activeIcon: ImageIcon(AssetImage('assets/icons/icon_project_active.png')),
+                label: 'Projects',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+          ),
         ),
       ),
     );
