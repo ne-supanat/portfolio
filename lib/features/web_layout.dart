@@ -26,7 +26,7 @@ class WebLayout extends StatelessWidget {
                 children: [overview(context), detail(context)],
               ),
             ),
-            Positioned(top: 4, right: 16, child: ThemeButton()),
+            Positioned(top: 16, right: 16, child: ThemeButton()),
           ],
         ),
       ),
@@ -80,10 +80,12 @@ class WebLayout extends StatelessWidget {
             children: [
               Expanded(
                 child: Column(
-                  spacing: 16,
+                  spacing: 8,
                   children: [
                     TimelineSection.work(),
+                    _buildSeparator(context),
                     TimelineSection.education(),
+                    _buildSeparator(context),
                     TimelineSection.award(),
                   ],
                 ),
@@ -94,5 +96,9 @@ class WebLayout extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildSeparator(BuildContext context) {
+    return Divider(color: Theme.of(context).primaryColor.withAlpha(80));
   }
 }
