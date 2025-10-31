@@ -20,7 +20,8 @@ class ProfileSection extends StatelessWidget {
       spacing: 8,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (showTitle) Text("Profile".toUpperCase(), style: Theme.of(context).textTheme.titleLarge),
+        if (showTitle)
+          Text("About me".toUpperCase(), style: Theme.of(context).textTheme.titleLarge),
         AppBox(
           child: Text(
             "Hi, I’m Flutter developer with 3+ years of professional experience in mobile application development. Skilled in creating mobile solutions with an understanding of frontend, backend, and AI technologies. Eager to apply my skill set to meaningful projects that create a positive impact.",

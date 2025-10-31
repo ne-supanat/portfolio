@@ -9,8 +9,21 @@ import '../widgets/skills_section.dart';
 import '../widgets/theme_button.dart';
 import '../widgets/timeline_section.dart';
 
-class WebLayout extends StatelessWidget {
+class WebLayout extends StatefulWidget {
   const WebLayout({super.key});
+
+  @override
+  State<WebLayout> createState() => _WebLayoutState();
+}
+
+class _WebLayoutState extends State<WebLayout> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,24 +88,63 @@ class WebLayout extends StatelessWidget {
         children: [
           ProfileSection.web(),
           Row(
-            spacing: 20,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Column(
-                  spacing: 8,
-                  children: [
-                    TimelineSection.work(),
-                    _buildSeparator(context),
-                    TimelineSection.education(),
-                    _buildSeparator(context),
-                    TimelineSection.award(),
-                  ],
+              TextButton(
+                onPressed: () {
+                  _onItemTapped(0);
+                },
+                child: Text(
+                  'Projects',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: _selectedIndex == 0 ? FontWeight.bold : FontWeight.normal,
+                  ),
                 ),
               ),
-              Expanded(child: SideProjectSection()),
+              TextButton(
+                onPressed: () {
+                  _onItemTapped(1);
+                },
+                child: Text(
+                  'Profile',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: _selectedIndex == 1 ? FontWeight.bold : FontWeight.normal,
+                  ),
+                ),
+              ),
             ],
           ),
+          [
+            SideProjectSection(),
+            Column(
+              spacing: 8,
+              children: [
+                TimelineSection.work(),
+                _buildSeparator(context),
+                TimelineSection.education(),
+                _buildSeparator(context),
+                TimelineSection.award(),
+              ],
+            ),
+          ][_selectedIndex],
+          // Row(
+          //   spacing: 20,
+          //   crossAxisAlignment: CrossAxisAlignment.start,
+          //   children: [
+          //     Expanded(
+          //       child: Column(
+          //         spacing: 8,
+          //         children: [
+          //           TimelineSection.work(),
+          //           _buildSeparator(context),
+          //           TimelineSection.education(),
+          //           _buildSeparator(context),
+          //           TimelineSection.award(),
+          //         ],
+          //       ),
+          //     ),
+          //     Expanded(child: SideProjectSection()),
+          //   ],
+          // ),
         ],
       ),
     );

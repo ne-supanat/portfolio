@@ -16,6 +16,7 @@ class ContactContent extends StatelessWidget {
           contactPhone(context),
           contactGithub(context),
           contactResume(context),
+          contactKofi(context),
         ],
       ),
     );
@@ -42,12 +43,20 @@ class ContactContent extends StatelessWidget {
   }
 
   Widget contactResume(BuildContext context) {
-    final url = "Resume";
     return contactItem(
       context,
       icon: Icon(Icons.insert_drive_file_rounded),
-      text: url,
+      text: "Resume",
       url: "https://drive.google.com/file/d/1GOcItr2xKtvtbJgaxsyZLBOVQ5bYCHiS/view?usp=sharing",
+    );
+  }
+
+  Widget contactKofi(BuildContext context) {
+    return contactItem(
+      context,
+      icon: Image.asset('assets/icons/icon_kofi.png', width: 24),
+      text: "Ko-fi",
+      url: "https://ko-fi.com/nheetial",
     );
   }
 

@@ -38,14 +38,6 @@ class TimelineSection extends StatelessWidget {
   factory TimelineSection.work() {
     final items = [
       TimelineModel(
-        time: "JAN 2021 - JAN 2024",
-        title: "Freelance",
-        subtitle2: "Position: Flutter Developer",
-        detialList: [
-          "Taken care of the project in many aspects including client communication, task process, timeline and compensation tracking.",
-        ],
-      ),
-      TimelineModel(
         time: "APR 2020 - APR 2023",
         title: "Smartsoftasia Co., Ltd",
         subtitle1: "(Bangkok, Thailand)",
@@ -65,6 +57,14 @@ class TimelineSection extends StatelessWidget {
         detialList: [
           "Assisted in the development of Android applications",
           "Gained hands-on experience in the software development proces",
+        ],
+      ),
+      TimelineModel(
+        time: "From time to time",
+        title: "Freelance",
+        subtitle2: "Position: Flutter Developer",
+        detialList: [
+          "Taken care of the project in many aspects including client communication, task process, timeline and compensation tracking.",
         ],
       ),
     ];
