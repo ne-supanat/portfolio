@@ -1,5 +1,15 @@
 [
     {
+        "title": "Charm",
+        "description": "A web application implemented with Flutter. It allows users to select lucky symbols/objects, background, and music to boost their fortune.",
+        "github": "https://github.com/ne-supanat/charm",
+        "url": "https://ne-supanat.github.io/charm/",
+        "tags": [
+            "Flutter",
+            "Lifestyle"
+        ]
+    },
+    {
         "title": "Translate Qualitative Data into Simulation Model with Help of LLMs",
         "description": "A research project study the benefits of using LLMs for translating qualitative data into ABM simulation. The system adopts human-AI workflow and produce Conceptual model, Decision rules, and a usabel Simulation model as final outputs.",
         "github": "https://github.com/ne-supanat/uon_dissertation",
